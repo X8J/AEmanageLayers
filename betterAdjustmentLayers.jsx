@@ -11,26 +11,53 @@ function renameAdjustmentLayers() {
                     for (var j = 1; j <= effects.numProperties; j++) {
                         var effect = effects.property(j);
                         var effectName = effect.name;
-                        newName += effectName + "+";
+                        newName +=  effectName + " ";
                     }
                     layer.name = newName;
                 }
             }
         }
-        alert("Renamed");
+        alert("Adjustment layers renamed based on applied effects.");
     } else {
-        alert("Composition not found");
+        alert("Please select a composition.");
     }
 }
 
-function createGUI() {
-    var window = new Window("palette", "Kai BetterAdjLayers");
-    window.orientation = "column";
-    var button = window.add("button", undefined, "Rename Layers");
+function createDockableUI(thisObj) {
+    var dialog =
+        thisObj instanceof Panel
+            ? thisObj
+            : new Window("palette", undefined, undefined, { resizeable: true });
+    dialog.alignChildren = "center";
+
+   
+    
+
+    var button = dialog.add("button", undefined, "Rename Layers");
+    button.alignment = ["fill", "top"];
+
     button.onClick = function() {
         renameAdjustmentLayers();
     };
-    window.show();
+
+    dialog.onResizing = dialog.onResize = function() {
+        this.layout.resize();
+    };
+
+    return dialog;
 }
 
-createGUI();
+
+function showWindow(myWindow) {
+    if (myWindow instanceof Window) {
+        myWindow.center();
+        myWindow.show();
+    }
+    if (myWindow instanceof Panel) {
+        myWindow.layout.layout(true);
+        myWindow.layout.resize();
+    }
+}
+
+var dockablePanel = createDockableUI(this);
+showWindow(dockablePanel);
