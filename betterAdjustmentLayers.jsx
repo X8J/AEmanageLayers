@@ -17,7 +17,7 @@ function renameAdjustmentLayers() {
                 }
             }
         }
-        alert("Adjustment layers renamed based on applied effects.");
+        
     } else {
         alert("Please select a composition.");
     }
