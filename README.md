@@ -1,5 +1,5 @@
 
-### betterAdjLayersV2
+### Better Adjustment Layers
 # A simple after effects script to rename all adjustment layers in a composition to the applied effects with a click of a button
 ![alt text](https://github.com/X8J/betterAdjustmentLayers/blob/ff4a11e6ffec33e14cd8402f2022fc8f20f8bf2a/screenshot.PNG)
 
