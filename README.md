@@ -9,6 +9,6 @@ To add in version 3:
 + Select which layer times you want renamed (i.e. solids, shape layers, etc.)
 + Auto update every time a new effect is applied?
 
-#H ow to install
+# How to install
 Go to your after effects install > Support Files > Scripts > ScriptUI Panels > Put script in that folder. 
 i.e. C:\Program Files\Adobe\Adobe After Effects 2024\Support Files\Scripts\ScriptUI Panels
