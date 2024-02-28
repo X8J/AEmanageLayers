@@ -11,6 +11,7 @@ Version 4 - No long override renamed adjustment layers (i.e. rename an adjustmen
 
 To add
 + Select which layer times you want renamed (i.e. solids, shape layers, etc.)
++ When ae dialog opens dont effect script 
 
 
 # How to install
