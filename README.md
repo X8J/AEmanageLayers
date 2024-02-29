@@ -18,6 +18,7 @@ To add
 Go to your after effects install > Support Files > Scripts > ScriptUI Panels > Put script in that folder. 
 i.e. C:\Program Files\Adobe\Adobe After Effects 2024\Support Files\Scripts\ScriptUI Panels
 
-You can also add v3 to the startup folder for it to automatically run upon ae opening
+You can also add to the startup folder for it to automatically run upon ae opening 
+i.e. F:\AdobeInstalls\Adobe After Effects 2024\Support Files\Scripts\Startup
  
 <h3 align="left"><img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 30px>
