@@ -3,10 +3,10 @@
 # A simple after effects script to rename all adjustment layers in a composition to the applied effects with a click of a button
 ![alt text](https://github.com/X8J/betterAdjustmentLayers/blob/ff4a11e6ffec33e14cd8402f2022fc8f20f8bf2a/screenshot.PNG)
 
-Version 1 - Press a button and rename all layers
+Version Manual - Press a button and rename all layers
 
-Version 4 - No long override renamed adjustment layers (i.e. rename an adjustment layer "Color Correction" and name will not be changed")
-VERSION 4 HAS ISSUES WHEN GOING IN AND OUT OF PRECOMPS.
+Version Auto - No long override renamed adjustment layers (i.e. rename an adjustment layer "Color Correction" and name will not be changed")
+VERSION Auto HAS ISSUES WHEN GOING IN AND OUT OF PRECOMPS.
 
 To add
 + Select which layer times you want renamed (i.e. solids, shape layers, etc.)
