@@ -5,9 +5,8 @@
 
 Version 1 - Press a button and rename all layers
 
-Version 3 - Automatically update layer names on a 2.5 second basis (Changeable in file)
-
 Version 4 - No long override renamed adjustment layers (i.e. rename an adjustment layer "Color Correction" and name will not be changed")
+VERSION 4 HAS ISSUES WHEN GOING IN AND OUT OF PRECOMPS.
 
 To add
 + Select which layer times you want renamed (i.e. solids, shape layers, etc.)
