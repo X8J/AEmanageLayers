@@ -34,9 +34,11 @@ function createDockableUI(thisObj) {
     button.onClick = function() {
         renameAdjustmentLayers();
     };
-
-    var discordText = dialog.add("statictext", undefined, "Discord: c.op");
-    var githubText = dialog.add("statictext", undefined, "Github.com/x8j");
+    var issueText = dialog.add("statictext", undefined, "Common issue: Script renames but AE does not update the names in ui,");
+    var discordText = dialog.add("statictext", undefined, "click on any adjustment layer and click rename and it should update");
+    var githubText = dialog.add("statictext", undefined, "This issue may occur when making and entering a precomp also.");
+    var Precomp = dialog.add("statictext", undefined, "Any issues? Add me! Discord: c.op");
+    
 
     dialog.onResizing = dialog.onResize = function() {
         this.layout.resize();
