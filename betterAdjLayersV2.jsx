@@ -45,6 +45,31 @@ function highlightLayersWithEffect(effectName, resultText) {
     app.endUndoGroup();
 }
 
+function changeSelectedLayersColor(color) {
+    var comp = app.project.activeItem;
+    if (!comp || !(comp instanceof CompItem)) {
+        alert("Please select a composition.");
+        return;
+    }
+
+    var layers = comp.selectedLayers;
+    if (layers.length === 0) {
+        alert("Please select at least one layer.");
+        return;
+    }
+
+    app.beginUndoGroup("Change Layers Color");
+
+    for (var i = 0; i < layers.length; i++) {
+        var layer = layers[i];
+        if (layer instanceof AVLayer) {
+            layer.label = color;
+        }
+    }
+
+    app.endUndoGroup();
+}
+
 function createDockableUI(thisObj) {
     var dialog =
         thisObj instanceof Panel
@@ -70,11 +95,39 @@ function createDockableUI(thisObj) {
     var highlightButton = dialog.add("button", undefined, "Highlight Layers");
     highlightButton.alignment = ["fill", "top"];
 
-    var resultText = dialog.add("statictext", undefined, "Amount of occurences found matching effect name");
+    var resultText = dialog.add("statictext", undefined, "");
+
+    var colorPicker = dialog.add("dropdownlist", undefined, [
+        "None",
+        "Red",
+        "Yellow",
+        "Aqua",
+        "Pink",
+        "Lavender",
+        "Peach",
+        "Seafoam",
+        "Blue",
+        "Green",
+        "Purple",
+        "Orange",
+        "Brown",
+        "Fuchsia",
+        "Cyan",
+        "Sandstone"
+    ]);
+    colorPicker.selection = 0;
+
+    var colorButton = dialog.add("button", undefined, "Change Color");
+    colorButton.alignment = ["fill", "top"];
 
     highlightButton.onClick = function() {
         var effectName = effectNameInput.text;
         highlightLayersWithEffect(effectName, resultText);
+    };
+
+    colorButton.onClick = function() {
+        var color = colorPicker.selection.index;
+        changeSelectedLayersColor(color);
     };
 
     dialog.onResizing = dialog.onResize = function() {
