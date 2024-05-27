@@ -94,8 +94,7 @@ function createDockableUI(thisObj) {
 
     var highlightButton = dialog.add("button", undefined, "Highlight Layers");
     highlightButton.alignment = ["fill", "top"];
-
-    var resultText = dialog.add("statictext", undefined, "");
+var resultText = dialog.add("statictext", undefined, "Number of effect occurences in current comp");
 
     var colorPicker = dialog.add("dropdownlist", undefined, [
         "None",
@@ -125,14 +124,19 @@ function createDockableUI(thisObj) {
         highlightLayersWithEffect(effectName, resultText);
     };
 
+
     colorButton.onClick = function() {
         var color = colorPicker.selection.index;
         changeSelectedLayersColor(color);
     };
 
+   
+
     dialog.onResizing = dialog.onResize = function() {
         this.layout.resize();
     };
+
+
 
     return dialog;
 }
