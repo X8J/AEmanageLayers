@@ -21,7 +21,7 @@ function renameAdjustmentLayers() {
     }
 }
 
-function highlightLayersWithEffect(effectName) {
+function highlightLayersWithEffect(effectName, resultText) {
     var comp = app.project.activeItem;
     if (!comp || !(comp instanceof CompItem)) {
         alert("Please select a composition.");
@@ -29,12 +29,18 @@ function highlightLayersWithEffect(effectName) {
     }
 
     var layers = comp.layers;
+    var matchedLayers = 0;
     app.beginUndoGroup("Highlight Layers with Effect");
 
     for (var i = 1; i <= layers.length; i++) {
         var layer = layers[i];
         layer.selected = layer instanceof AVLayer && layer.name.indexOf(effectName) !== -1;
+        if (layer.selected) {
+            matchedLayers++;
+        }
     }
+
+    resultText.text = matchedLayers + " layers found with effect: " + effectName;
 
     app.endUndoGroup();
 }
@@ -63,9 +69,12 @@ function createDockableUI(thisObj) {
 
     var highlightButton = dialog.add("button", undefined, "Highlight Layers");
     highlightButton.alignment = ["fill", "top"];
+
+    var resultText = dialog.add("statictext", undefined, "Amount of occurences found matching effect name");
+
     highlightButton.onClick = function() {
         var effectName = effectNameInput.text;
-        highlightLayersWithEffect(effectName);
+        highlightLayersWithEffect(effectName, resultText);
     };
 
     dialog.onResizing = dialog.onResize = function() {
@@ -75,15 +84,12 @@ function createDockableUI(thisObj) {
     return dialog;
 }
 
-function showWindow(myWindow) {
-    if (myWindow instanceof Window) {
-        myWindow.center();
-        myWindow.show();
-    } else if (myWindow instanceof Panel) {
-        myWindow.layout.layout(true);
-        myWindow.layout.resize();
-    }
-}
-
 var dockablePanel = createDockableUI(this);
-showWindow(dockablePanel);
+
+if (dockablePanel instanceof Window) {
+    dockablePanel.center();
+    dockablePanel.show();
+} else {
+    dockablePanel.layout.layout(true);
+    dockablePanel.layout.resize();
+}
