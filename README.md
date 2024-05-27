@@ -14,6 +14,7 @@ To add
 + Going in and out of precomps no longer stops renaming process
 + Autofill when searching
 + Searching verbatim, (full effect name, not indexOf)
++ Change color of the highlighted layers
 
 
 # How to install
