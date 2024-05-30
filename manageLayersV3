@@ -31,6 +31,7 @@
 
         var layers = comp.layers;
         var matchedLayers = 0;
+        var lowerCaseEffectName = effectName.toLowerCase();
         app.beginUndoGroup("Highlight Layers with Effect");
 
         for (var i = 1; i <= layers.length; i++) {
@@ -39,7 +40,7 @@
                 (selectAdjustmentLayers && layer instanceof AVLayer && layer.adjustmentLayer) ||
                 (selectPrecomps && layer instanceof AVLayer && layer.source instanceof CompItem) ||
                 (selectMp3s && layer instanceof AVLayer && layer.source && layer.source.file && layer.source.file.name.match(/\.mp3$/i))
-            ) && layer.name.indexOf(effectName) !== -1;
+            ) && layer.name.toLowerCase().indexOf(lowerCaseEffectName) !== -1;
 
             layer.selected = selectLayer;
             if (layer.selected) {
