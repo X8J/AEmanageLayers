@@ -6,7 +6,7 @@
 Version Manual - Press a button and rename all layers
 
 Version Auto - No long override renamed adjustment layers (i.e. rename an adjustment layer "Color Correction" and name will not be changed")
-VERSION Auto HAS ISSUES WHEN GOING IN AND OUT OF PRECOMPS.
+VERSION Auto HAS ISSUES WHEN GOING IN AND OUT OF PRECOMPS. - Scrapped?
 
 To add
 + Select which layer types you want renamed (i.e. solids, shape layers, etc.)
@@ -14,6 +14,7 @@ To add
 + Going in and out of precomps no longer stops renaming process
 + Autofill when searching
 + Searching verbatim, (full effect name, not indexOf)
++ Video preview
 
 
 # How to install
